@@ -1,5 +1,8 @@
 import { Stack, Box } from "@mui/material";
+import { Link } from "react-router-dom";
 import { logo } from "../../constants";
+import { colors } from "../../constants/colors";
+import SearchBar from "../search-bar/search-bar";
 
 const Navbar = () => {
   return (
@@ -8,9 +11,17 @@ const Navbar = () => {
       alignItems={"center"}
       justifyContent={"space-between"}
       p={2}
+      sx={{
+        position: "sticky",
+        top: 0,
+        zIndex: 999,
+        background: colors.primary,
+      }}
     >
-      <h2>Logo</h2>
-      SearchBar
+      <Link to="/">
+        <img src={logo} alt="logo" height={30} />
+      </Link>
+      <SearchBar />
       <Box />
     </Stack>
   );
